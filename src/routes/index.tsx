@@ -12,6 +12,7 @@ const LINKS = {
   gaspump:
     "https://t.me/GasPump_bot/app?startapp=eyJ0b2tlbl9hZGRyZXNzIjogIkVRQlFxQm5GUzltMloyMng4eFNGUXcwdGdPM29MbUZFNmwxa0ZaUVJjYm1XaVAyeCJ9",
   buy: "https://t.me/dtrade?start=16ZqlHyQsp_EQBQqBnFS9m2Z22x8xSFQw0tgO3oLmFE6l1kFZQRcbmWiP2x",
+  stickers: "https://t.me/addstickers/LowRiderGifts_by_EmojiRu_Bot",
 };
 
 export const Route = createFileRoute("/")({
