@@ -12,6 +12,7 @@ const LINKS = {
   gaspump:
     "https://t.me/GasPump_bot/app?startapp=eyJ0b2tlbl9hZGRyZXNzIjogIkVRQlFxQm5GUzltMloyMng4eFNGUXcwdGdPM29MbUZFNmwxa0ZaUVJjYm1XaVAyeCJ9",
   buy: "https://t.me/dtrade?start=16ZqlHyQsp_EQBQqBnFS9m2Z22x8xSFQw0tgO3oLmFE6l1kFZQRcbmWiP2x",
+  stickers: "https://t.me/addstickers/LowRiderGifts_by_EmojiRu_Bot",
 };
 
 export const Route = createFileRoute("/")({
@@ -177,6 +178,11 @@ function Index() {
             className="rounded-2xl border-2 border-accent bg-card p-5 text-foreground hover:bg-accent hover:text-accent-foreground transition">
             <p className="text-xs uppercase tracking-widest opacity-80">Follow on</p>
             <p className="font-display text-2xl">X →</p>
+          </a>
+          <a href={LINKS.stickers} target="_blank" rel="noopener noreferrer"
+            className="group rounded-2xl bg-gradient-to-r from-accent/80 to-primary/80 p-5 text-white shadow-neon hover:scale-[1.02] transition col-span-1 sm:col-span-2 text-center">
+            <p className="text-xs uppercase tracking-widest opacity-90">Telegram</p>
+            <p className="font-display text-2xl">View Sticker Pack →</p>
           </a>
         </div>
 
