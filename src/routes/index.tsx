@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import character from "@/assets/lowrider-character.gif.asset.json";
-import banner from "@/assets/lowrider-banner.jpg.asset.json";
+import sticker1 from "@/assets/lowrider-sticker-1.gif.asset.json";
+import sticker2 from "@/assets/lowrider-sticker-2.gif.asset.json";
 import anthem from "@/assets/lowrider-anthem.mp3.asset.json";
 
 const CA = "EQBQqBnFS9m2Z22x8xSFQw0tgO3oLmFE6l1kFZQRcbmWiP2x";
@@ -20,9 +21,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Low Rider ($LORR) — the audio memecoin born from Telegram Gifts. Cruise the sunset on TON via GasPump." },
       { property: "og:title", content: "$LORR — Low Rider" },
       { property: "og:description", content: "Audio memecoin on TON. Roll low. Ride loud." },
-      { property: "og:image", content: banner.url },
+      { property: "og:image", content: character.url },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: banner.url },
+      { name: "twitter:image", content: character.url },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -95,13 +96,27 @@ function Index() {
           </h1>
           <p className="mt-3 font-script text-3xl sm:text-4xl text-secondary text-glow">$LORR</p>
 
-          <div className="relative mx-auto mt-8 w-full max-w-md">
+          <div className="relative mx-auto mt-8 w-full max-w-3xl">
             <div className="absolute inset-0 -z-10 rounded-full blur-3xl bg-secondary/40" />
-            <img
-              src={character.url}
-              alt="Low Rider character cruising"
-              className="mx-auto w-64 sm:w-80 animate-lowride drop-shadow-[0_20px_30px_oklch(0.3_0.2_320/0.6)]"
-            />
+            <div className="flex items-end justify-center gap-2 sm:gap-6">
+              <img
+                src={sticker1.url}
+                alt="Low Rider sticker"
+                className="w-20 sm:w-36 md:w-44 animate-lowride drop-shadow-[0_15px_25px_oklch(0.3_0.2_320/0.6)] -rotate-6"
+                style={{ animationDelay: "0.3s" }}
+              />
+              <img
+                src={character.url}
+                alt="Low Rider character cruising"
+                className="w-40 sm:w-64 md:w-80 animate-lowride drop-shadow-[0_20px_30px_oklch(0.3_0.2_320/0.6)] relative z-10"
+              />
+              <img
+                src={sticker2.url}
+                alt="Low Rider sticker"
+                className="w-20 sm:w-36 md:w-44 animate-lowride drop-shadow-[0_15px_25px_oklch(0.3_0.2_320/0.6)] rotate-6"
+                style={{ animationDelay: "0.6s" }}
+              />
+            </div>
           </div>
 
           <p className="mx-auto mt-6 max-w-xl text-base sm:text-lg text-muted-foreground">
@@ -116,13 +131,6 @@ function Index() {
             <span className="text-xl">{playing ? "⏸" : "▶"}</span>
             {playing ? "Pause the Anthem" : "Play the Anthem"}
           </button>
-        </div>
-      </section>
-
-      {/* Banner */}
-      <section className="px-5">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border-2 border-secondary/60 shadow-glow">
-          <img src={banner.url} alt="Low Rider sunset banner" className="w-full" />
         </div>
       </section>
 
