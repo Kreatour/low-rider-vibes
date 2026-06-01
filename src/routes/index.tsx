@@ -158,29 +158,50 @@ function Index() {
 
       {/* Buttons */}
       <section className="px-5 pb-16">
-        <div className="mx-auto grid max-w-3xl grid-cols-1 sm:grid-cols-2 gap-4">
-          <a href={LINKS.buy} target="_blank" rel="noopener noreferrer"
-            className="group rounded-2xl bg-primary p-5 text-primary-foreground shadow-glow hover:scale-[1.02] transition">
-            <p className="text-xs uppercase tracking-widest opacity-80">Buy on</p>
-            <p className="font-display text-2xl">dTrade →</p>
-          </a>
-          <a href={LINKS.gaspump} target="_blank" rel="noopener noreferrer"
-            className="group rounded-2xl bg-secondary p-5 text-secondary-foreground shadow-neon hover:scale-[1.02] transition">
-            <p className="text-xs uppercase tracking-widest opacity-80">Trade on</p>
-            <p className="font-display text-2xl">GasPump →</p>
-          </a>
-          <a href={LINKS.chat} target="_blank" rel="noopener noreferrer"
-            className="rounded-2xl border-2 border-accent bg-card p-5 text-foreground hover:bg-accent hover:text-accent-foreground transition">
-            <p className="text-xs uppercase tracking-widest opacity-80">Telegram</p>
-            <p className="font-display text-2xl">Chat →</p>
-          </a>
-          <a href={LINKS.x} target="_blank" rel="noopener noreferrer"
-            className="rounded-2xl border-2 border-accent bg-card p-5 text-foreground hover:bg-accent hover:text-accent-foreground transition">
-            <p className="text-xs uppercase tracking-widest opacity-80">Follow on</p>
-            <p className="font-display text-2xl">X →</p>
-          </a>
+        <div className="mx-auto max-w-3xl space-y-6">
+          {/* Buy & Trade — horizontal */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <a href={LINKS.buy} target="_blank" rel="noopener noreferrer"
+              className="group rounded-2xl bg-primary p-5 text-primary-foreground shadow-glow hover:scale-[1.02] transition text-center">
+              <p className="text-xs uppercase tracking-widest opacity-80">Buy on</p>
+              <p className="font-display text-2xl">dTrade →</p>
+            </a>
+            <a href={LINKS.gaspump} target="_blank" rel="noopener noreferrer"
+              className="group rounded-2xl bg-secondary p-5 text-secondary-foreground shadow-neon hover:scale-[1.02] transition text-center">
+              <p className="text-xs uppercase tracking-widest opacity-80">Trade on</p>
+              <p className="font-display text-2xl">GasPump →</p>
+            </a>
+          </div>
+
+          {/* Floating social icon buttons */}
+          <div className="flex items-center justify-center gap-5">
+            <a
+              href={LINKS.chat}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram Chat"
+              className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-accent bg-card text-accent shadow-neon hover:bg-accent hover:text-accent-foreground hover:scale-110 transition"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+              </svg>
+            </a>
+            <a
+              href={LINKS.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow on X"
+              className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-accent bg-card text-accent shadow-neon hover:bg-accent hover:text-accent-foreground hover:scale-110 transition"
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+
+          {/* Sticker pack — unchanged */}
           <a href={LINKS.stickers} target="_blank" rel="noopener noreferrer"
-            className="group rounded-2xl bg-gradient-to-r from-accent/80 to-primary/80 p-5 text-white shadow-neon hover:scale-[1.02] transition col-span-1 sm:col-span-2 text-center">
+            className="group block rounded-2xl bg-gradient-to-r from-accent/80 to-primary/80 p-5 text-white shadow-neon hover:scale-[1.02] transition text-center">
             <p className="text-xs uppercase tracking-widest opacity-90">Telegram</p>
             <p className="font-display text-2xl">View Sticker Pack →</p>
           </a>
