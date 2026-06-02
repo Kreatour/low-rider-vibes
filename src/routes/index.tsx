@@ -4,6 +4,7 @@ import character from "@/assets/lowrider-character.gif.asset.json";
 import sticker1 from "@/assets/lowrider-sticker-1.gif.asset.json";
 import sticker2 from "@/assets/lowrider-sticker-2.gif.asset.json";
 import anthem from "@/assets/lowrider-anthem.mp3.asset.json";
+import favicon from "@/assets/lowrider-favicon.jpg.asset.json";
 
 const CA = "EQBQqBnFS9m2Z22x8xSFQw0tgO3oLmFE6l1kFZQRcbmWiP2x";
 const LINKS = {
@@ -31,6 +32,8 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lobster&family=Rubik:wght@400;600;800&display=swap" },
       { rel: "canonical", href: "/" },
+      { rel: "icon", type: "image/jpeg", href: favicon.url },
+      { rel: "apple-touch-icon", href: favicon.url },
     ],
   }),
   component: Index,
@@ -89,7 +92,7 @@ function Index() {
       </div>
 
       {/* Hero */}
-      <section className="relative px-5 pt-8 pb-12 sm:pt-16 sm:pb-20">
+      <section className="relative px-5 pt-8 pb-6 sm:pt-16 sm:pb-8">
         <div className="mx-auto max-w-5xl text-center">
           <p className="font-script text-2xl sm:text-3xl text-accent text-glow">Low</p>
           <h1 className="font-display text-6xl sm:text-8xl md:text-9xl chrome-text leading-none">
@@ -125,18 +128,27 @@ function Index() {
             droppin' it like it's hot — live on GasPump.
           </p>
 
+          {/* Low rider boombox-style play button */}
           <button
             onClick={toggle}
-            className="mt-6 inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 font-bold uppercase tracking-wider text-primary-foreground shadow-glow transition hover:scale-105 active:scale-95"
+            aria-label={playing ? "Pause anthem" : "Play anthem"}
+            className="group relative mt-6 inline-flex items-center gap-3 rounded-2xl border-2 border-accent/70 bg-gradient-to-b from-[oklch(0.35_0.12_340)] via-[oklch(0.22_0.09_340)] to-[oklch(0.15_0.06_340)] px-5 py-3 font-bold uppercase tracking-wider text-accent shadow-[inset_0_1px_0_oklch(1_0_0/0.25),inset_0_-2px_4px_oklch(0_0_0/0.5),0_0_24px_oklch(0.85_0.18_90/0.5)] transition hover:scale-105 active:scale-95"
           >
-            <span className="text-xl">{playing ? "⏸" : "▶"}</span>
-            {playing ? "Pause the Anthem" : "Play the Anthem"}
+            <span aria-hidden className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-b from-[oklch(0.4_0.05_340)] to-[oklch(0.1_0.03_340)] ring-2 ring-accent/80 shadow-[inset_0_0_6px_oklch(0_0_0/0.8)]">
+              <span className={`h-3 w-3 rounded-full bg-accent ${playing ? "animate-pulse" : ""} shadow-[0_0_8px_oklch(0.85_0.18_90/0.9)]`} />
+            </span>
+            <span className="chrome-text font-display text-lg">
+              {playing ? "Killin' the Vibe" : "Bump the Beat"}
+            </span>
+            <span aria-hidden className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-b from-[oklch(0.4_0.05_340)] to-[oklch(0.1_0.03_340)] ring-2 ring-accent/80 shadow-[inset_0_0_6px_oklch(0_0_0/0.8)]">
+              <span className={`h-3 w-3 rounded-full bg-accent ${playing ? "animate-pulse" : ""} shadow-[0_0_8px_oklch(0.85_0.18_90/0.9)]`} style={{ animationDelay: "0.3s" }} />
+            </span>
           </button>
         </div>
       </section>
 
       {/* CA */}
-      <section className="px-5 py-12">
+      <section className="px-5 pt-2 pb-10">
         <div className="mx-auto max-w-3xl rounded-3xl border border-border bg-card p-6 backdrop-blur-md">
           <p className="text-xs uppercase tracking-[0.3em] text-accent font-bold">Contract Address</p>
           <div className="mt-3 flex items-center gap-3 rounded-2xl bg-background/60 p-3 sm:p-4 border border-border">
