@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Configure Nitro for Vercel deployment (Edge-compatible fetch handler)
+  nitro: {
+    preset: "vercel",
+  },
 });
