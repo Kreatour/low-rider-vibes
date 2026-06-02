@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import character from "@/assets/lowrider-character.gif";
-import sticker1 from "@/assets/lowrider-sticker-1.gif";
-import sticker2 from "@/assets/lowrider-sticker-2.gif";
-import anthem from "@/assets/lowrider-anthem.mp3";
-import favicon from "@/assets/lowrider-favicon.jpg";
+import character from "@/assets/lowrider-character.gif.asset.json";
+import sticker1 from "@/assets/lowrider-sticker-1.gif.asset.json";
+import sticker2 from "@/assets/lowrider-sticker-2.gif.asset.json";
+import anthem from "@/assets/lowrider-anthem.mp3.asset.json";
+import favicon from "@/assets/lowrider-favicon.jpg.asset.json";
 
 const CA = "EQBQqBnFS9m2Z22x8xSFQw0tgO3oLmFE6l1kFZQRcbmWiP2x";
 const LINKS = {
@@ -23,17 +23,17 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Low Rider ($LORR) — the audio memecoin born from Telegram Gifts. Cruise the sunset on TON via GasPump." },
       { property: "og:title", content: "$LORR — Low Rider" },
       { property: "og:description", content: "Audio memecoin on TON. Roll low. Ride loud." },
-      { property: "og:image", content: character },
+      { property: "og:image", content: character.url },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: character },
+      { name: "twitter:image", content: character.url },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lobster&family=Rubik:wght@400;600;800&display=swap" },
       { rel: "canonical", href: "/" },
-      { rel: "icon", type: "image/jpeg", href: favicon },
-      { rel: "apple-touch-icon", href: favicon },
+      { rel: "icon", type: "image/jpeg", href: favicon.url },
+      { rel: "apple-touch-icon", href: favicon.url },
     ],
   }),
   component: Index,
@@ -76,7 +76,7 @@ function Index() {
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <audio ref={audioRef} src={anthem} loop preload="none" />
+      <audio ref={audioRef} src={anthem.url} loop preload="none" />
 
       {/* Marquee */}
       <div className="border-b border-border bg-background/40 backdrop-blur-sm overflow-hidden">
@@ -104,20 +104,20 @@ function Index() {
             <div className="absolute inset-0 -z-10 rounded-full blur-3xl bg-secondary/40 animate-pulse" />
             <div className="flex items-end justify-center gap-2 sm:gap-6">
               <img
-                src={sticker1}
+                src={sticker1.url}
                 alt="Low Rider sticker"
                 className="w-20 sm:w-36 md:w-44 animate-lowride drop-shadow-[0_15px_25px_oklch(0.3_0.2_320/0.6)] -rotate-6 will-change-transform"
                 style={{ animationDelay: "0.3s" }}
                 loading="lazy"
               />
               <img
-                src={character}
+                src={character.url}
                 alt="Low Rider character cruising"
                 className="w-40 sm:w-64 md:w-80 animate-lowride drop-shadow-[0_20px_30px_oklch(0.3_0.2_320/0.6)] relative z-10 will-change-transform"
                 loading="lazy"
               />
               <img
-                src={sticker2}
+                src={sticker2.url}
                 alt="Low Rider sticker"
                 className="w-20 sm:w-36 md:w-44 animate-lowride drop-shadow-[0_15px_25px_oklch(0.3_0.2_320/0.6)] rotate-6 will-change-transform"
                 style={{ animationDelay: "0.6s" }}
