@@ -13,9 +13,10 @@ export default defineConfig({
     server: { entry: "server" },
   },
   nitro: {
-    output: {
-      dir: ".output",
-      public: "dist",
+    prerender: {
+      crawlLinks: true,
+      routes: ["/sitemap.xml", "/robots.txt"],
+      ignore: ["/api"],
     },
   },
 });
