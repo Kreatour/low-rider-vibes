@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import character from "@/assets/lowrider-character.gif.asset.json";
-import sticker1 from "@/assets/lowrider-sticker-1.gif.asset.json";
-import sticker2 from "@/assets/lowrider-sticker-2.gif.asset.json";
-import anthem from "@/assets/lowrider-anthem.mp3.asset.json";
-import favicon from "@/assets/lowrider-favicon.jpg.asset.json";
+
+const character = "/media/lowrider-character.gif";
+const sticker1 = "/media/lowrider-sticker-1.gif";
+const sticker2 = "/media/lowrider-sticker-2.gif";
+const anthem = "/media/lowrider-anthem.mp3";
+const favicon = "/media/lowrider-favicon.jpg";
 
 const CA = "EQBQqBnFS9m2Z22x8xSFQw0tgO3oLmFE6l1kFZQRcbmWiP2x";
 const LINKS = {
@@ -23,17 +24,17 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Low Rider ($LORR) — the audio memecoin born from Telegram Gifts. Cruise the sunset on TON via GasPump." },
       { property: "og:title", content: "$LORR — Low Rider" },
       { property: "og:description", content: "Audio memecoin on TON. Roll low. Ride loud." },
-      { property: "og:image", content: character.url },
+      { property: "og:image", content: character },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: character.url },
+      { name: "twitter:image", content: character },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lobster&family=Rubik:wght@400;600;800&display=swap" },
       { rel: "canonical", href: "/" },
-      { rel: "icon", type: "image/jpeg", href: favicon.url },
-      { rel: "apple-touch-icon", href: favicon.url },
+      { rel: "icon", type: "image/jpeg", href: favicon },
+      { rel: "apple-touch-icon", href: favicon },
     ],
   }),
   component: Index,
