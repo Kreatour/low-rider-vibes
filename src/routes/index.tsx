@@ -77,7 +77,7 @@ function Index() {
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <audio ref={audioRef} src={anthem.url} loop preload="none" />
+      <audio ref={audioRef} src={anthem} loop preload="none" />
 
       {/* Marquee */}
       <div className="border-b border-border bg-background/40 backdrop-blur-sm overflow-hidden">
@@ -105,18 +105,18 @@ function Index() {
             <div className="absolute inset-0 -z-10 rounded-full blur-3xl bg-secondary/40" />
             <div className="flex items-end justify-center gap-2 sm:gap-6">
               <img
-                src={sticker1.url}
+                src={sticker1}
                 alt="Low Rider sticker"
                 className="w-20 sm:w-36 md:w-44 animate-lowride drop-shadow-[0_15px_25px_oklch(0.3_0.2_320/0.6)] -rotate-6"
                 style={{ animationDelay: "0.3s" }}
               />
               <img
-                src={character.url}
+                src={character}
                 alt="Low Rider character cruising"
                 className="w-40 sm:w-64 md:w-80 animate-lowride drop-shadow-[0_20px_30px_oklch(0.3_0.2_320/0.6)] relative z-10"
               />
               <img
-                src={sticker2.url}
+                src={sticker2}
                 alt="Low Rider sticker"
                 className="w-20 sm:w-36 md:w-44 animate-lowride drop-shadow-[0_15px_25px_oklch(0.3_0.2_320/0.6)] rotate-6"
                 style={{ animationDelay: "0.6s" }}
